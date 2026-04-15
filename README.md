@@ -2,21 +2,19 @@
 
 Public documentation and legal notices for the iOS app **養車管家AI** (ServiceSense AI).
 
-The app source itself lives in a separate repository. This repo exists so that App Store Connect and end users have a publicly accessible location for the documents Apple requires to be online.
+The app source itself lives in a separate repository. This repo hosts the public-facing support site via GitHub Pages so App Store Connect has a stable, authentication-free URL for the documents Apple requires.
 
-## Documents
+## Site
 
-- **[LEGAL.md](LEGAL.md)** — Terms of Service and Privacy Policy (Traditional Chinese + English)
+- **Landing**: https://thsiao3000-commits.github.io/ServiceSenseAI-Support/
+- **Privacy Policy**: https://thsiao3000-commits.github.io/ServiceSenseAI-Support/privacy.html
+- **Terms of Service**: https://thsiao3000-commits.github.io/ServiceSenseAI-Support/terms.html (redirects to privacy.html — combined document)
 
-## Privacy Policy URL for App Store Connect
+## App Store Connect
 
-```
-https://github.com/thsiao3000-commits/ServiceSenseAI-Support/blob/main/LEGAL.md
-```
+- **Privacy Policy URL**: `https://thsiao3000-commits.github.io/ServiceSenseAI-Support/privacy.html`
+- **Support URL**: `https://thsiao3000-commits.github.io/ServiceSenseAI-Support/`
 
 ## Reporting an issue
 
-If you would like to report a bug, request a feature, or ask a question about the app, please open an issue in this repository.
-
-- **Email**: _not available_
-- **Issues**: [Open a new issue](https://github.com/thsiao3000-commits/ServiceSenseAI-Support/issues)
+If you would like to report a bug, request a feature, or ask a question about the app, please [open an issue](https://github.com/thsiao3000-commits/ServiceSenseAI-Support/issues).
