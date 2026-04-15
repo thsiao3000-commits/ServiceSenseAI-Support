@@ -54,6 +54,7 @@
     <ul>
         <li><strong>API Key</strong>：僅儲存於你的裝置上，透過 iOS Keychain 保護（<code>kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code>）。金鑰不會同步到 iCloud，也不會傳送到任何地方，除非你主動點擊「掃描」時傳給你選定的 LLM 服務商。</li>
         <li><strong>保養紀錄</strong>（包含帳單影像、車輛暱稱、AI 分析建議）：僅儲存於你的裝置的本地 SwiftData 資料庫。</li>
+        <li><strong>車輛里程</strong>：一律以「公里 (km)」為 canonical 單位儲存於本機資料庫。若你在設定頁把顯示單位切換為英里 (mi)，app 僅在顯示與輸入時做換算，既有紀錄永遠不會被重新寫入，因此切換單位不會造成任何資料漂移或捨入累積。</li>
         <li>本 app <strong>不會</strong>將任何資料上傳到開發者控制的後端。</li>
     </ul>
 
@@ -106,6 +107,7 @@
         <ul>
             <li><strong>API keys</strong> you enter are stored only on your device in the iOS Keychain (<code>kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code>). They are not synced to iCloud and are not transmitted anywhere except to the LLM provider you selected when you explicitly tap "Scan".</li>
             <li><strong>Maintenance records</strong>, including receipt images, vehicle nicknames, and AI-generated insights, are stored only on your device in a local SwiftData database.</li>
+            <li><strong>Vehicle mileage</strong> is always stored in kilometers as the canonical unit in the local database. If you set the display unit to miles in Settings, the App only converts at display and input time; stored values are never rewritten, so switching the display unit never causes data drift or accumulating rounding.</li>
             <li>The App does <strong>not</strong> upload any data to a backend controlled by the developer.</li>
         </ul>
 

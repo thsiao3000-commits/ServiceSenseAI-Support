@@ -218,6 +218,12 @@
         </details>
 
         <details>
+            <summary>如何切換公里 (km) 和英里 (mi) 顯示？<span class="en-q">How do I switch between kilometers (km) and miles (mi)?</span></summary>
+            <p>設定頁 → 距離單位 → 選 KM 或 MI。預設會依你的裝置地區自動判斷（美國→英里、其他→公里）。app 內部一律以公里儲存里程資料，切換單位只影響顯示與輸入，既有紀錄不會被重新寫入。因此，一位台灣使用者如果切換到英里模式瀏覽舊紀錄，看到的是精確的 km → mi 換算值；使用者重新切回公里模式時，紀錄值完全不變。掃描美式帳單時，LLM 會在辨識階段把「Odometer: 45,230 mi」乘以 1.609 換成公里後回傳，所以儲存層永遠保持一致。</p>
+            <p class="en">Settings → Distance Unit → pick KM or MI. Defaults to your device region (US → miles, elsewhere → kilometers). The app always stores mileage in kilometers internally; switching units only affects display and input, and existing records are never rewritten. So a Taiwan user switching to miles to view old records sees an accurate km → mi conversion, and switching back to km leaves the stored values unchanged. When scanning US receipts, the LLM multiplies an "Odometer: 45,230 mi" reading by 1.609 to return kilometers, so the storage layer stays consistent.</p>
+        </details>
+
+        <details>
             <summary>如何刪除所有資料？<span class="en-q">How do I delete all my data?</span></summary>
             <p>在設定頁點擊任何車輛右側的垃圾桶按鈕即可刪除該車輛以及底下的所有保養紀錄（級聯刪除）。若要完全移除所有資料，最徹底的方法是從 iOS 的 app 列表中刪除本 app —— SwiftData 資料庫與 Keychain 條目都會一併被 iOS 清掉。</p>
             <p class="en">In Settings, tap the trash icon next to any vehicle to delete that vehicle and all its records (cascaded). For a full wipe, uninstall the app from iOS — the SwiftData database and Keychain entries are removed automatically by iOS.</p>
