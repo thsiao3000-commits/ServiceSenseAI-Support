@@ -6,16 +6,18 @@
     <title>養車管家AI — Support</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Roboto, sans-serif; background: #f5f7fa; color: #1d1d1f; line-height: 1.6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Roboto, sans-serif; background: #f5f7fa; color: #1d1d1f; line-height: 1.7; }
         .hero { background: linear-gradient(135deg, #2997ff, #0071e3); color: white; padding: 60px 20px; text-align: center; }
         .hero h1 { font-size: 2.4em; margin-bottom: 8px; font-weight: 800; }
         .hero .tagline { font-size: 1.1em; opacity: 0.92; }
-        .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
         .card { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
         .card h2 { font-size: 1.3em; margin-bottom: 16px; color: #0071e3; font-weight: 700; }
+        .card h3 { font-size: 1.02em; margin: 20px 0 6px; color: #1d1d1f; font-weight: 700; }
         .card p, .card li { font-size: 0.95em; color: #424245; margin-bottom: 8px; }
-        .card ul { padding-left: 20px; }
-        .card p.en, .card li.en { color: #5a5a60; }
+        .card ul, .card ol { padding-left: 22px; }
+        .en { color: #5a5a60; }
+        .en p, .en li, .en h3 { color: #5a5a60; }
         .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
         .links a { display: inline-block; padding: 12px 22px; background: #0071e3; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: background 0.2s; font-size: 0.95em; }
         .links a:hover { background: #0060c0; }
@@ -26,8 +28,24 @@
         .feature .icon { font-size: 1.4em; margin-bottom: 6px; }
         .feature .title { font-weight: 700; color: #0071e3; font-size: 0.95em; margin-bottom: 4px; }
         .feature .desc { font-size: 0.85em; color: #616166; }
+        .step { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+        .step .n { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #0071e3; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; margin-top: 1px; }
+        .step .text { flex: 1; }
+        .step .text strong { color: #1d1d1f; display: block; margin-bottom: 2px; font-size: 0.95em; }
+        .step .text .sub { font-size: 0.85em; color: #616166; }
+        details { border: 1px solid #e0e6f0; border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; background: #fafbfd; }
+        details[open] { background: white; border-color: #c2d4f0; }
+        details summary { cursor: pointer; font-weight: 600; color: #1d1d1f; font-size: 0.95em; list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary::before { content: "▸ "; color: #0071e3; display: inline-block; transition: transform 0.15s; }
+        details[open] summary::before { content: "▾ "; }
+        details p { margin-top: 10px; font-size: 0.9em; color: #424245; }
+        details .en-q { color: #616166; font-size: 0.85em; display: block; font-weight: 400; margin-top: 2px; }
+        .section-label { color: #86868b; font-size: 0.78em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; font-weight: 600; }
+        .divider { border: none; border-top: 1px solid #e0e6f0; margin: 32px 0; }
+        a.inline { color: #0071e3; text-decoration: none; }
+        a.inline:hover { text-decoration: underline; }
         footer { text-align: center; padding: 32px 20px; color: #86868b; font-size: 0.85em; }
-        .divider-label { color: #86868b; font-size: 0.78em; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 8px; }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8em; }
             .card { padding: 24px; }
@@ -38,33 +56,36 @@
 
 <div class="hero">
     <h1>🚗 養車管家AI</h1>
-    <p class="tagline">AI 智慧辨識保養帳單 · 車輛維護紀錄管家</p>
+    <p class="tagline">AI 智慧辨識保養帳單 · Vehicle maintenance intelligence</p>
 </div>
 
 <div class="container">
+
+    <!-- About -->
     <div class="card">
         <h2>關於 養車管家AI / About</h2>
-        <p>養車管家AI 是一款 iOS app，透過 AI 自動辨識你的汽車維修與保養帳單，並依歷史紀錄提供費用合理性與保養週期建議。支援台灣與美國兩地的帳單格式，繁體中文 / English 介面可切換。</p>
-        <p class="en">養車管家AI is an iOS app that uses AI to automatically scan car service receipts and tracks maintenance history. It supports both Taiwan and US receipt formats and can be used in Traditional Chinese or English.</p>
+        <p>養車管家AI 是一款 iOS app，透過 AI 自動辨識你的汽車維修與保養帳單，並依車輛歷史紀錄提供費用合理性與保養週期建議。支援台灣與美國兩地的帳單格式，介面可切換繁體中文與 English。</p>
+        <p class="en">養車管家AI is an iOS app that uses AI to automatically scan car service receipts and track maintenance history. It supports both Taiwan and US receipt formats and the interface switches between Traditional Chinese and English.</p>
     </div>
 
+    <!-- Key Features -->
     <div class="card">
         <h2>主要功能 / Key Features</h2>
         <div class="feature-grid">
             <div class="feature">
                 <div class="icon">📸</div>
                 <div class="title">AI 帳單掃描</div>
-                <div class="desc">拍照或上傳保養帳單，自動抽出項目、金額與店家</div>
+                <div class="desc">拍照或相簿選擇，自動抽出項目、金額與店家</div>
             </div>
             <div class="feature">
                 <div class="icon">⚡</div>
                 <div class="title">雙模式辨識</div>
-                <div class="desc">本地 OCR 省成本；AI 視覺辨識對模糊帳單更準</div>
+                <div class="desc">本地 OCR 最快速；AI 視覺辨識對模糊帳單更準</div>
             </div>
             <div class="feature">
                 <div class="icon">💡</div>
                 <div class="title">智慧建議</div>
-                <div class="desc">比對歷史紀錄，給出費用判斷與保養週期提醒</div>
+                <div class="desc">比對歷史紀錄給出費用判斷與保養週期提醒</div>
             </div>
             <div class="feature">
                 <div class="icon">🔐</div>
@@ -74,6 +95,142 @@
         </div>
     </div>
 
+    <!-- Getting Started -->
+    <div class="card">
+        <h2>快速開始 / Getting Started</h2>
+        <p class="section-label">繁體中文</p>
+        <div class="step">
+            <div class="n">1</div>
+            <div class="text">
+                <strong>新增你的第一輛車</strong>
+                <div class="sub">總覽頁 → 新增車輛 → 填入暱稱、品牌、年份、目前里程</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="n">2</div>
+            <div class="text">
+                <strong>取得 LLM 服務商的 API Key</strong>
+                <div class="sub">OpenAI：<a href="https://platform.openai.com/api-keys" class="inline" target="_blank" rel="noopener">platform.openai.com/api-keys</a><br>Groq：<a href="https://console.groq.com/keys" class="inline" target="_blank" rel="noopener">console.groq.com/keys</a></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="n">3</div>
+            <div class="text">
+                <strong>在「設定」頁填入 API Key</strong>
+                <div class="sub">選擇服務商 → 貼上 Key → 點「測試金鑰」驗證可用性（免費、不消耗 token）</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="n">4</div>
+            <div class="text">
+                <strong>開始掃描保養帳單</strong>
+                <div class="sub">記錄頁 → 拍照掃描 或 從相簿選擇 → AI 會自動填入欄位供你核對</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="n">5</div>
+            <div class="text">
+                <strong>確認並儲存</strong>
+                <div class="sub">核對 AI 抽出的項目與金額 → 確認儲存 → AI 會產生這次保養的智慧摘要</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="en">
+            <p class="section-label">English</p>
+            <div class="step">
+                <div class="n">1</div>
+                <div class="text">
+                    <strong>Add your first vehicle</strong>
+                    <div class="sub">Overview tab → Add Vehicle → enter a nickname, make, year, and current mileage.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="n">2</div>
+                <div class="text">
+                    <strong>Get an API key from an LLM provider</strong>
+                    <div class="sub">OpenAI: <a href="https://platform.openai.com/api-keys" class="inline" target="_blank" rel="noopener">platform.openai.com/api-keys</a><br>Groq: <a href="https://console.groq.com/keys" class="inline" target="_blank" rel="noopener">console.groq.com/keys</a></div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="n">3</div>
+                <div class="text">
+                    <strong>Paste your API key into Settings</strong>
+                    <div class="sub">Pick a provider, paste the key, then tap "Test Key" to verify (free, no tokens consumed).</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="n">4</div>
+                <div class="text">
+                    <strong>Scan a receipt</strong>
+                    <div class="sub">Scan tab → take a photo or choose from library → the AI extracts line items for you to review.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="n">5</div>
+                <div class="text">
+                    <strong>Review and save</strong>
+                    <div class="sub">Verify the items and amounts, tap Save, and the AI will generate a maintenance insight for this record.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card">
+        <h2>常見問題 / FAQ</h2>
+
+        <details>
+            <summary>這個 app 要付費嗎？<span class="en-q">Does the app cost anything?</span></summary>
+            <p>養車管家AI 本身免費。但你需要 OpenAI 或 Groq 的 API Key，使用費會由 LLM 服務商直接向你收取（按照他們各自的定價）。一次帳單掃描通常花費不到 US$0.01（Groq 免費額度內）至 US$0.05（OpenAI GPT-5.4 視覺辨識模式）。</p>
+            <p class="en">The app itself is free. However, you need an API key from OpenAI or Groq and pay usage fees directly to them at their published rates. A single receipt scan typically costs less than US$0.01 (within Groq's free tier) up to about US$0.05 (OpenAI GPT-5.4 in AI Vision mode).</p>
+        </details>
+
+        <details>
+            <summary>掃描失敗怎麼辦？<span class="en-q">What should I do if my scan fails?</span></summary>
+            <p>最常見原因是：光線不足、角度太歪、API Key 無效、或達到用量限制。建議：重新拍一張更清楚的照片、或切換到「AI 視覺辨識」模式（對手寫與模糊帳單更穩）、或到設定頁確認 API Key 仍然有效。</p>
+            <p class="en">The most common causes are: bad lighting, skewed angle, invalid API key, or rate limits. Try retaking a clearer photo, switching to "AI Vision" mode (more reliable on handwritten or blurry receipts), or verifying your API key in Settings.</p>
+        </details>
+
+        <details>
+            <summary>辨識出來的金額或項目不對？<span class="en-q">Why is the recognized amount or item wrong?</span></summary>
+            <p>AI 辨識不是 100% 完美。你可以在確認頁或紀錄詳情頁直接點擊任何欄位（類別、日期、店家、里程、項目）進行編輯，總金額會自動重新計算。</p>
+            <p class="en">AI recognition isn't perfect. You can tap any field (category, date, shop, mileage, line items) directly in either the confirm screen or the saved record's detail view to edit it. The total cost recalculates automatically.</p>
+        </details>
+
+        <details>
+            <summary>我的資料存在哪裡？會上傳到哪？<span class="en-q">Where is my data stored? Where does it get uploaded?</span></summary>
+            <p>完全存在你的裝置上：API Key 在 iOS Keychain，保養紀錄在 SwiftData 本地資料庫。開發者沒有伺服器，不會收到任何資料。唯一的對外連線是當你主動掃描時，帳單內容（純文字或整張圖片，看你選的掃描模式）會送到你選定的 LLM 服務商。</p>
+            <p class="en">Everything lives on your device: API keys in iOS Keychain, records in a local SwiftData database. The developer has no servers and receives nothing. The only outbound traffic happens when you actively scan — receipt contents (plain text or the full image, depending on scan mode) go to your chosen LLM provider.</p>
+        </details>
+
+        <details>
+            <summary>如何切換中英文介面？<span class="en-q">How do I switch between Chinese and English?</span></summary>
+            <p>設定頁 → 顯示語言 → 選擇「自動 / Auto」（跟隨系統）、「繁體中文」或「English」。切換後立即生效，不用重開 app。</p>
+            <p class="en">Settings → Display Language → pick "Auto" (follows system), "Traditional Chinese", or "English". The change applies immediately without needing to relaunch the app.</p>
+        </details>
+
+        <details>
+            <summary>如何切換台幣和美元顯示？<span class="en-q">How do I switch between TWD and USD display?</span></summary>
+            <p>設定頁 → 顯示幣別。預設會根據你的裝置地區自動選擇（台灣→TWD、其他→USD），也可以手動覆蓋。TWD 顯示整數（NT$2,760），USD 保留小數（$34.99）。</p>
+            <p class="en">Settings → Display Currency. Defaults to your device region (Taiwan → TWD, elsewhere → USD) and can be overridden manually. TWD shows whole numbers (NT$2,760); USD preserves decimals ($34.99).</p>
+        </details>
+
+        <details>
+            <summary>如何刪除所有資料？<span class="en-q">How do I delete all my data?</span></summary>
+            <p>在設定頁點擊任何車輛右側的垃圾桶按鈕即可刪除該車輛以及底下的所有保養紀錄（級聯刪除）。若要完全移除所有資料，最徹底的方法是從 iOS 的 app 列表中刪除本 app —— SwiftData 資料庫與 Keychain 條目都會一併被 iOS 清掉。</p>
+            <p class="en">In Settings, tap the trash icon next to any vehicle to delete that vehicle and all its records (cascaded). For a full wipe, uninstall the app from iOS — the SwiftData database and Keychain entries are removed automatically by iOS.</p>
+        </details>
+
+        <details>
+            <summary>掃描出來的日期是 2015 年但實際是 2026 年？<span class="en-q">Why does the scanned date show 2015 when the actual year is 2026?</span></summary>
+            <p>這通常發生在台灣帳單使用民國紀年（例如「民國 115 年」）時。最新版本的 app 已經在 LLM prompt 裡加入民國→西元的轉換規則，新掃描的帳單應該會自動處理。若看到既有紀錄日期錯誤，可以在紀錄詳情頁直接點日期欄位修正。</p>
+            <p class="en">This typically happens with Taiwan receipts using Republic of China (ROC) calendar notation (e.g. "民國 115 年"). The latest version of the app includes ROC-to-Gregorian conversion rules in the LLM prompt, so new scans should handle this automatically. For existing records with wrong dates, tap the date field in the record detail view to correct it.</p>
+        </details>
+    </div>
+
+    <!-- Legal -->
     <div class="card">
         <h2>法律文件 / Legal</h2>
         <p>完整的服務條款與隱私權政策（繁中 + English）：</p>
@@ -83,12 +240,13 @@
         </div>
     </div>
 
+    <!-- Contact -->
     <div class="card">
         <h2>聯絡與支援 / Contact & Support</h2>
-        <p>發現問題或想建議新功能？歡迎到 GitHub 開 issue：</p>
-        <p class="en">Found a bug or have a feature request? Please open an issue on GitHub:</p>
+        <p>遇到 bug、想建議新功能、或有關於 app 使用的任何問題？請到 GitHub 開 issue，我會盡快回覆。</p>
+        <p class="en">Found a bug, have a feature request, or any question about using the app? Please open an issue on GitHub and I'll get back to you.</p>
         <div class="links">
-            <a href="https://github.com/thsiao3000-commits/ServiceSenseAI-Support/issues">Open an Issue</a>
+            <a href="https://github.com/thsiao3000-commits/ServiceSenseAI-Support/issues" target="_blank" rel="noopener">Open an Issue / 回報問題</a>
         </div>
     </div>
 </div>
